@@ -80,7 +80,7 @@ class PonyRepository(IRepository):
 
 class Main:
     @staticmethod
-    def run() -> None:
+    def run(repository: IRepository = None) -> None:
         print("Programa iniciado")
 
 
