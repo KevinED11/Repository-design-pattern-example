@@ -1,7 +1,13 @@
+"""
+This module implements the repository design pattern
+"""
 from abc import ABC, abstractmethod
 
 
 class IRepository(ABC):
+    """
+    Interface for the repository
+    """
     @abstractmethod
     def get_item(self):
         pass
@@ -20,6 +26,9 @@ class IRepository(ABC):
 
 
 class SQLModelRepository(IRepository):
+    """
+    Implementation of the repository using SQLModel
+    """
     def get_item(self):
         pass
 
@@ -34,6 +43,9 @@ class SQLModelRepository(IRepository):
 
 
 class InMemoryRepository(IRepository):
+    """
+    Implementation of the repository in memory
+    """
     def __init__(self) -> None:
         self.__data_source = []
 
@@ -51,6 +63,9 @@ class InMemoryRepository(IRepository):
 
 
 class SQLAlchemyRepository(IRepository):
+    """
+    Implementation of the repository using SQLAlchemy
+    """
     def get_item(self):
         pass
 
@@ -65,6 +80,9 @@ class SQLAlchemyRepository(IRepository):
 
 
 class PonyRepository(IRepository):
+    """
+    Implementation of the repository using Pony
+    """
     def get_item(self):
         pass
 
@@ -79,6 +97,9 @@ class PonyRepository(IRepository):
 
 
 class Main:
+    """
+    Entry point of the program
+    """
     @staticmethod
     def run(repository: IRepository = None) -> None:
         print("Programa iniciado")
